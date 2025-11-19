@@ -6,91 +6,93 @@
 <title>Mila Monet - Live Cam</title>
 
 <style> 
-    .page-wrapper {
+.page-wrapper {
     max-width: 420px;
     margin: 0 auto;
 }
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f4f4f4;
-        padding: 15px;
-    }
 
-    .header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    padding: 15px;
+}
 
-    .profile-pic {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: #ccc;
-    }
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
 
-    .model-info h1 {
-        margin: 0;
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #ccc;
+}
 
-    .flag {
-        width: 28px;
-        height: 20px;
-        border-radius: 3px;
-    }
+.model-info h1 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .stars {
-        margin-top: 5px;
-        font-size: 18px;
-        color: gold;
-    }
+.flag {
+    width: 28px;
+    height: 20px;
+    border-radius: 3px;
+}
 
-    .btn-container {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
+.stars {
+    margin-top: 5px;
+    font-size: 18px;
+    color: gold;
+}
 
-    .btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        background: white;
-        padding: 12px 15px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        font-size: 17px;
-        color: #333;
-        font-weight: bold;
-    }
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
- .model-image {
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 17px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* FIXED: This is the correct class name */
+.model-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: contain;
-    background: #000; /* optional — fills empty space */
+    margin-top: 20px; /* space between buttons and picture */
 }
 
-    .emoji-icon {
-        font-size: 22px;
-    }
+.emoji-icon {
+    font-size: 22px;
+}
 </style>
 </head>
 <body>
-    <div class="page-wrapper">
+
+<div class="page-wrapper">
 
 <!-- Header Section -->
 <div class="header">
-    <!-- Circle profile placeholder -->
     <img class="profile-pic" src="profile.jpg">
 
     <div class="model-info">
@@ -99,7 +101,6 @@
             <img class="flag" src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg">
         </h1>
 
-        <!-- 5 Golden Stars -->
         <div class="stars">★★★★★</div>
     </div>
 </div>
@@ -117,15 +118,11 @@
     </a>
 </div>
 
-<!-- Full Model Image Placeholder (Clickable) -->
+<!-- FIXED: correct class name -->
 <a href="https://t.ajrkm1.com/126144/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN">
-    <img class="photo" src="photoo.jpg" alt="Model Photo Placeholder">
+    <img class="model-image" src="photoo.jpg" alt="Model Photo">
 </a>
-        
+
 </div>
 </body>
 </html>
-
-
-
-
