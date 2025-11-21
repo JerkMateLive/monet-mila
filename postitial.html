@@ -3,58 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mila Monet - Connecting...</title>
+<title>Connecting you…</title>
 
 <style>
     body {
-        font-family: Arial, sans-serif;
         margin: 0;
         background: #f4f4f4;
-        padding: 15px;
-        text-align: center;
+        font-family: Arial, sans-serif;
     }
 
     .page-wrapper {
         max-width: 420px;
         margin: 0 auto;
+        padding: 20px;
+        text-align: center;
     }
 
-    .box {
-        background: white;
-        padding: 25px;
+    /* JerkMate logo */
+    .logo {
+        width: 150px;
+        margin: 10px auto 20px;
+    }
+
+    /* Card flip animation */
+    .card-wrapper {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        perspective: 800px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
         border-radius: 12px;
+        background: white;
         border: 1px solid #ddd;
-        margin-top: 40px;
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        animation: flip 1.6s ease-in-out 0.4s forwards;
     }
 
-    h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
+    @keyframes flip {
+        0% { transform: rotateY(0); }
+        50% { transform: rotateY(180deg); }
+        100% { transform: rotateY(360deg); }
+    }
+
+    /* card faces */
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
         font-weight: bold;
+        border-radius: 12px;
     }
 
-    p {
-        font-size: 16px;
-        color: #444;
-        line-height: 1.5;
-    }
-
-    .steps {
-        text-align: left;
-        margin-top: 20px;
-        font-size: 17px;
+    .front {
+        background: #ffffff;
         color: #333;
-        line-height: 1.7;
-        font-weight: bold;
     }
 
+    .back {
+        background: #ffffff;
+        color: #ff4e91;
+        transform: rotateY(180deg);
+    }
+
+    /* Spinner */
     .spinner {
-        margin: 25px auto;
         width: 45px;
         height: 45px;
         border: 5px solid #ddd;
         border-top: 5px solid #333;
         border-radius: 50%;
+        margin: 25px auto;
         animation: spin 1s linear infinite;
     }
 
@@ -62,43 +91,70 @@
         to { transform: rotate(360deg); }
     }
 
+    .steps-box {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-top: 25px;
+        border-radius: 12px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: bold;
+    }
+
     .btn {
         display: block;
         margin-top: 25px;
-        text-decoration: none;
+        padding: 12px;
+        font-size: 18px;
         background: white;
-        padding: 12px 15px;
-        border-radius: 8px;
         border: 1px solid #ddd;
-        font-size: 17px;
-        color: #333;
+        border-radius: 10px;
+        text-decoration: none;
         font-weight: bold;
+        color: #333;
     }
-</style>
 
+</style>
 </head>
+
 <body>
+
 <div class="page-wrapper">
 
-    <div class="box">
-        <h2>Preparing your private room… 🔥</h2>
-        <p>Follow the steps to enter Mila Monet’s LiveCam</p>
+    <!-- JerkMate Logo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Jerkmate_logo.png" class="logo">
 
-        <div class="spinner"></div>
+    <!-- Matching Text -->
+    <h2 style="margin-bottom: 5px;">Matching you with Mila Monet… 💕</h2>
+    <p style="margin-top: 0; color: #444;">Sit tight while we confirm availability</p>
 
-        <div class="steps">
-            1️⃣ Create a free JerkMate account.<br>
-            2️⃣ Search my username <b>“itsmilamonet”</b><br>
-            3️⃣ Get the free Lifetime Membership 🎁
+    <!-- Card Flip -->
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="front">Searching…</div>
+            <div class="back">Match Found!</div>
         </div>
-
-        <a class="btn" onclick="playSound()" href="https://t.ajrkm1.com/126144/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN">
-            Enter Now
-        </a>
     </div>
 
-    <!-- Sound effect -->
-    <audio id="clickSound" preload="auto">
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- Steps -->
+    <div class="steps-box">
+        1️⃣ Create a free JerkMate account.<br>
+        2️⃣ Search username: <b>“itsmilamonet”</b><br>
+        3️⃣ Get the free Lifetime Membership 🎁
+    </div>
+
+    <!-- Button -->
+    <a class="btn" onclick="playSound()" href="https://t.ajrkm1.com/126144/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN">
+        Enter Mila's Room 💖
+    </a>
+
+    <!-- Sound Effect -->
+    <audio id="clickSfx" preload="auto">
         <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3f6e5e8b38.mp3?filename=click-124467.mp3" type="audio/mpeg">
     </audio>
 
@@ -106,13 +162,13 @@
 
 <script>
 function playSound() {
-    document.getElementById("clickSound").play();
+    document.getElementById("clickSfx").play();
 }
 
-// Auto redirect after 2 seconds (optional)
-setTimeout(function() {
+/* Auto redirect after animation (2.5s) */
+setTimeout(() => {
     window.location.href = "https://t.ajrkm1.com/126144/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN";
-}, 2000);
+}, 2500);
 </script>
 
 </body>
