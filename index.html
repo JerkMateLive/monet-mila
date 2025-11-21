@@ -87,7 +87,19 @@ body {
 }
 </style>
 </head>
-<body>
+<script>
+fetch("https://ipapi.co/json/")
+  .then(res => res.json())
+  .then(data => {
+      let country = data.country_name;
+      document.getElementById("geoText").innerText = country;
+  })
+  .catch(err => {
+      document.getElementById("geoText").innerText = "your country";
+  });
+</script>
+    
+    <body>
 
 <div class="page-wrapper">
 
@@ -105,6 +117,10 @@ body {
     </div>
 </div>
 
+    <p style="text-align:center; margin-top:15px; font-size:16px; color:#444;">
+    Mila Monet is available in <b id="geoText">your area</b> 🔥
+</p>
+    
 <!-- Buttons Section -->
 <div class="btn-container">
     <a href="postitial.html" class="btn">
@@ -126,5 +142,6 @@ body {
 </div>
 </body>
 </html>
+
 
 
